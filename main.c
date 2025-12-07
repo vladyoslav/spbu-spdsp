@@ -33,7 +33,8 @@ void wait_for_signal(void) {
 }
 
 void run_parent(pid_t child_pid) {
-    usleep(10000);
+    // Small delay to allow child process to start
+    sleep(1);
     
     for (int i = 0; i < ITERATIONS; i++) {
         printf("Parent: PING %d\n", i + 1);
